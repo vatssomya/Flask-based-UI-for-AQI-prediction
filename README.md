@@ -1,55 +1,46 @@
-# Flask-based-UI-for-AQI-prediction
-Flask AQI Prediction
-This is a Flask-based web application for predicting Air Quality Index (AQI) using a machine learning model. The application provides a user-friendly interface to input relevant environmental parameters and receive the predicted AQI.
+# Flask AQI Prediction
 
-Features
-Simple UI: User-friendly interface built using Flask.
-AQI Prediction: Predicts AQI based on input features.
-Interactive Input: Allows users to input environmental parameters such as temperature, humidity, etc.
-Requirements
-Python 3.x
-Flask
-Scikit-learn (or any other ML library used)
-Pandas
-Any additional dependencies as required by your project
-Installation
-Clone the repository:
+This is a Flask-based web application for predicting Air Quality Index (AQI) using a machine learning model. The project leverages data from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/index.php) and applies data preprocessing, oversampling, and machine learning techniques to deliver accurate predictions through an intuitive web interface.
 
-bash
-Copy code
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-Install dependencies:
+## Introduction
 
-bash
-Copy code
-pip install -r requirements.txt
-Run the application:
+The Air Quality Index (AQI) is a critical metric that reflects air pollution levels and their potential health impacts. To create this application:
 
-bash
-Copy code
-python app.py
-Open the application in your browser:
+1. **Dataset**: I sourced the dataset from the UCI Machine Learning Repository, which includes various environmental parameters and their corresponding AQI values.
+2. **Data Preprocessing**: 
+   - Performed cleaning and normalization of data to handle missing or inconsistent values.
+   - Applied **SMOTE (Synthetic Minority Oversampling Technique)** to address any class imbalance in the dataset.
+3. **Model Development**:
+   - Experimented with multiple machine learning algorithms such as Random Forest, Gradient Boosting, and Support Vector Machines.
+   - Evaluated models using metrics like accuracy, precision, and F1-score.
+   - Selected the best-performing model and saved it using `joblib` for deployment.
+4. **Frontend**:
+   - Designed the UI using **HTML** and **CSS**, ensuring a simple and responsive interface for input and output.
+5. **Backend**:
+   - Built the backend using **Flask**, which handles user inputs, model predictions, and results display.
 
-arduino
-Copy code
-http://127.0.0.1:5000
-Usage
-Enter the required environmental parameters into the form.
-Click the Predict AQI button.
-View the predicted AQI on the results page.
-Project Structure
-php
-Copy code
-.
-├── app.py                # Main Flask application
-├── templates/            # HTML templates
-│   ├── index.html        # Home page
-│   └── result.html       # Results page
-├── static/               # Static files (CSS, JS, images)
-├── model/                # Machine learning model files
-│   └── aqi_model.pkl     # Pretrained model
-├── requirements.txt      # Dependencies
-└── README.md             # Documentation
-License
-This project is licensed under the MIT License. Feel free to use and modify the code as per your needs.
+This project combines data science and web development to provide a functional and user-friendly AQI prediction tool.
+
+## Features
+
+- **User-Friendly Interface**: Simple and interactive UI for inputting environmental parameters.
+- **Real-Time AQI Prediction**: Predicts AQI based on user-provided data.
+- **Pre-Trained Model**: Utilizes a trained machine learning model for accurate predictions.
+- **Lightweight Web App**: Built using Flask for fast and efficient backend processing.
+
+## Requirements
+
+- Python 3.x
+- Flask
+- Scikit-learn
+- Pandas
+- NumPy
+- SMOTE (via `imbalanced-learn`)
+- Any additional dependencies (listed in `requirements.txt`)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
