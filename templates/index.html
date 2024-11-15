@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AQI Prediction</h1>
+        <p>Enter the following details for air quality (units in brackets):</p>
+        <form method="POST" action="/predict">
+            <label for="pt08_s1_co">PT08.S1(CO):</label>
+            <input type="text" id="pt08_s1_co" name="PT08.S1(CO)" required>
+            
+            <label for="nmhc_gt">NMHC(GT):</label>
+            <input type="text" id="nmhc_gt" name="NMHC(GT)" required>
+            
+            <label for="c6h6_gt">C6H6(GT):</label>
+            <input type="text" id="c6h6_gt" name="C6H6(GT)" required>
+            
+            <label for="pt08_s2_nmhc">PT08.S2(NMHC):</label>
+            <input type="text" id="pt08_s2_nmhc" name="PT08.S2(NMHC)" required>
+            
+            <label for="nox_gt">NOx(GT):</label>
+            <input type="text" id="nox_gt" name="NOx(GT)" required>
+            
+            <label for="pt08_s3_nox">PT08.S3(NOx):</label>
+            <input type="text" id="pt08_s3_nox" name="PT08.S3(NOx)" required>
+            
+            <label for="no2_gt">NO2(GT):</label>
+            <input type="text" id="no2_gt" name="NO2(GT)" required>
+            
+            <label for="pt08_s4_no2">PT08.S4(NO2):</label>
+            <input type="text" id="pt08_s4_no2" name="PT08.S4(NO2)" required>
+            
+            <label for="pt08_s5_o3">PT08.S5(O3):</label>
+            <input type="text" id="pt08_s5_o3" name="PT08.S5(O3)" required>
+            
+            <label for="temperature">Temperature (°C):</label>
+            <input type="text" id="temperature" name="T" required>
+            
+            <label for="humidity">Relative Humidity (%):</label>
+            <input type="text" id="humidity" name="RH" required>
+            
+            <label for="ah">Absolute Humidity (g/m³):</label>
+            <input type="text" id="ah" name="AH" required>
+            
+            <button type="submit">Predict</button>
+            <a href="{{ url_for('index') }}">Go Back to Home</a>
+        </form>
+    </div>
+</body>
+</html>
